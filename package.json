@@ -1,0 +1,30 @@
+{
+    "name": "nextjs-course",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon -w server.js server.js",
+        "start": "next start",
+        "build": "next build"
+    },
+    "keywords": [],
+    "author": "Malcolm Childs",
+    "license": "ISC",
+    "dependencies": {
+        "dropbox": "4.0.17",
+        "dotenv": "8.0.0",
+        "express": "4.17.1",
+        "express-session": "1.16.1",
+        "isomorphic-fetch": "2.2.1",
+        "material-ui": "0.20.2",
+        "next": "8.1.0",
+        "node-cache": "4.2.0",
+        "react": "16.8.6",
+        "react-dom": "16.8.6",
+        "react-tap-event-plugin": "3.0.3"
+    },
+    "devDependencies": {
+        "nodemon": "1.19.1"
+    }
+}
