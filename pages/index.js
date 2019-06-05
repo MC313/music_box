@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import App from '../components/App';
+import App from '../client/components/App';
 
 const Index = () =>  <App/>;
 
