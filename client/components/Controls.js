@@ -19,11 +19,11 @@ const style = {
 const controlBtm = {
     justifyContent: 'space-between',
     display: 'flex',
-    'align-items': 'center',
+    'alignItems': 'center',
     'width': '60%',
 }
 
-const Controls = () => (
+const Controls = ({artwork}) => (
     <div style={style} className="controls">
         <TrackSeeker />
         <div style={controlBtm} className="controls__bottom">
