@@ -17,7 +17,6 @@ const { Provider, Consumer } = (StoreContext = React.createContext());
 
 const StoreProvider = ({ children }) => {
     const [state, dispatch] = useReducer(rootReducer, initialState);
-
     return <Provider value={{ state, actions, dispatch }}>{children}</Provider>;
 };
 

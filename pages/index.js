@@ -1,24 +1,22 @@
-    import fetch from 'isomorphic-fetch';
-import { StoreConsumer, StoreProvider } from '../client/store';
-import App from '../client/components/App';
+import fetch from 'isomorphic-fetch';
 
-const Index = ({music}) => (
-    <StoreProvider>
-        <StoreConsumer value={{state: {tracks: music}}}>
-            {() => {
-                return <App/>;
-            }}
-        </StoreConsumer>
-    </StoreProvider>
-);
+import MusicPlayer from '../components/MusicPlayer';
+
+const Index = ({music}) => {
+    return (
+        <MusicPlayer tracks={music} />
+    );
+}
 
 Index.getInitialProps = async () => {
     try {
         const res = await fetch('http://localhost:9000/api/music');
-        const data = await res.json();
-        return { music: data.music };
+        const response = await res.json();
+        const { data } = response;
+        return { music: data };
     } catch (error) {
         console.error('Error getting music.', error)
+        return {error: 'ERROR', errorMsg: error};
     }
 };
 

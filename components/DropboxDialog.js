@@ -7,7 +7,6 @@ const dbx = new Dropbox({
 const run = async () => {
     try {
         const folders = await dbx.getAuthenticationUrl('http://localhost:3000/auth');
-        console.log('FOLDERS', folders);
     } catch (error) {
         console.error('There was an error.', error);
     }

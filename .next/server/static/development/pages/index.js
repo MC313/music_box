@@ -93,10 +93,10 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./client/components/App.js":
-/*!**********************************!*\
-  !*** ./client/components/App.js ***!
-  \**********************************/
+/***/ "./components/Artwork.js":
+/*!*******************************!*\
+  !*** ./components/Artwork.js ***!
+  \*******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -104,94 +104,7 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store */ "./client/store/index.js");
-/* harmony import */ var _Artwork__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Artwork */ "./client/components/Artwork.js");
-/* harmony import */ var _Controls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Controls */ "./client/components/Controls.js");
-/* harmony import */ var _Head__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Head */ "./client/components/Head.js");
-/* harmony import */ var _MainContent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./MainContent */ "./client/components/MainContent.js");
-/* harmony import */ var _Menu__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Menu */ "./client/components/Menu.js");
-var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/client/components/App.js";
-
-
-
-
-
-
-
-
-var styles = {
-  height: '100%',
-  display: 'flex',
-  flexDirection: 'row',
-  paddingBottom: '150px'
-};
-
-function App() {
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_store__WEBPACK_IMPORTED_MODULE_1__["StoreContext"]),
-      tracks = _useContext.tracks;
-
-  console.log('tracks', tracks);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Head__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    style: {
-      height: '100%'
-    },
-    className: "App",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    style: styles,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Menu__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MainContent__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: this
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Controls__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    artwork: _Artwork__WEBPACK_IMPORTED_MODULE_2__["default"],
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: this
-  })));
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (App);
-
-/***/ }),
-
-/***/ "./client/components/Artwork.js":
-/*!**************************************!*\
-  !*** ./client/components/Artwork.js ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/client/components/Artwork.js";
+var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/components/Artwork.js";
 
 var styles = {
   display: 'flex',
@@ -235,10 +148,10 @@ var Artwork = function Artwork(_ref) {
 
 /***/ }),
 
-/***/ "./client/components/Controls.js":
-/*!***************************************!*\
-  !*** ./client/components/Controls.js ***!
-  \***************************************/
+/***/ "./components/Controls.js":
+/*!********************************!*\
+  !*** ./components/Controls.js ***!
+  \********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -246,11 +159,11 @@ var Artwork = function Artwork(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _TrackSeeker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TrackSeeker */ "./client/components/TrackSeeker.js");
-/* harmony import */ var _PreviousBtn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PreviousBtn */ "./client/components/PreviousBtn.js");
-/* harmony import */ var _PlayBtn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PlayBtn */ "./client/components/PlayBtn.js");
-/* harmony import */ var _NextBtn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NextBtn */ "./client/components/NextBtn.js");
-var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/client/components/Controls.js";
+/* harmony import */ var _TrackSeeker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TrackSeeker */ "./components/TrackSeeker.js");
+/* harmony import */ var _PreviousBtn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PreviousBtn */ "./components/PreviousBtn.js");
+/* harmony import */ var _PlayBtn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PlayBtn */ "./components/PlayBtn.js");
+/* harmony import */ var _NextBtn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NextBtn */ "./components/NextBtn.js");
+var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/components/Controls.js";
 
 
 
@@ -324,10 +237,10 @@ var Controls = function Controls(_ref) {
 
 /***/ }),
 
-/***/ "./client/components/Head.js":
-/*!***********************************!*\
-  !*** ./client/components/Head.js ***!
-  \***********************************/
+/***/ "./components/Head.js":
+/*!****************************!*\
+  !*** ./components/Head.js ***!
+  \****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -339,13 +252,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/client/components/Head.js";
+var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/components/Head.js";
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "jsx-1162094959",
+    className: "jsx-3786876224",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4
@@ -360,7 +273,7 @@ var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/client/componen
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
     name: "viewport",
     content: "width=device-width, initial-scale=1",
-    className: "jsx-1162094959",
+    className: "jsx-3786876224",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 6
@@ -368,63 +281,23 @@ var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/client/componen
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
     charSet: "utf-8",
-    className: "jsx-1162094959",
+    className: "jsx-3786876224",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-    id: "1162094959",
+    id: "3786876224",
     __self: this
-  }, "*{box-sizing:border-box;}html,body{width:100%;height:100vh;margin:0px;padding:0px;overflow:hidden;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL21hbGNvbG0vRGV2L2phdmFzY3JpcHQvZWdnaGVhZC1uZXh0LWpzL2NsaWVudC9jb21wb25lbnRzL0hlYWQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBUXlCLEFBR2lDLEFBR1gsV0FDRSxXQUhmLEVBSWEsV0FDQyxZQUNJLGdCQUNsQiIsImZpbGUiOiIvaG9tZS9tYWxjb2xtL0Rldi9qYXZhc2NyaXB0L2VnZ2hlYWQtbmV4dC1qcy9jbGllbnQvY29tcG9uZW50cy9IZWFkLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IEhlYWQgZnJvbSAnbmV4dC9oZWFkJztcblxuZXhwb3J0IGRlZmF1bHQgKCkgPT4gKFxuICAgIDxkaXY+XG4gICAgICA8SGVhZD5cbiAgICAgICAgPG1ldGEgbmFtZT1cInZpZXdwb3J0XCIgY29udGVudD1cIndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xXCIgLz5cbiAgICAgICAgPG1ldGEgY2hhclNldD1cInV0Zi04XCIgLz5cbiAgICAgIDwvSGVhZD5cbiAgICAgIDxzdHlsZSBqc3ggZ2xvYmFsPntgXG4gICAgICAgICoge1xuICAgICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgICAgIH1cbiAgICAgICAgaHRtbCwgYm9keSB7IFxuICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgIGhlaWdodDogMTAwdmg7XG4gICAgICAgICAgbWFyZ2luOiAwcHg7XG4gICAgICAgICAgcGFkZGluZzogMHB4O1xuICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgICAgIH1cbiAgICAgIGB9PC9zdHlsZT5cbiAgICA8L2Rpdj5cbiAgKSJdfQ== */\n/*@ sourceURL=/home/malcolm/Dev/javascript/egghead-next-js/client/components/Head.js */"));
+  }, "*{box-sizing:border-box;}html,body{width:100%;height:100vh;margin:0px;padding:0px;overflow:hidden;}#__next{height:100%;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL21hbGNvbG0vRGV2L2phdmFzY3JpcHQvZWdnaGVhZC1uZXh0LWpzL2NvbXBvbmVudHMvSGVhZC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFReUIsQUFHaUMsQUFHWCxBQU9DLFdBTkMsQ0FPZixVQVZBLEVBSWEsV0FDQyxZQUNJLGdCQUNsQiIsImZpbGUiOiIvaG9tZS9tYWxjb2xtL0Rldi9qYXZhc2NyaXB0L2VnZ2hlYWQtbmV4dC1qcy9jb21wb25lbnRzL0hlYWQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgSGVhZCBmcm9tICduZXh0L2hlYWQnO1xuXG5leHBvcnQgZGVmYXVsdCAoKSA9PiAoXG4gICAgPGRpdj5cbiAgICAgIDxIZWFkPlxuICAgICAgICA8bWV0YSBuYW1lPVwidmlld3BvcnRcIiBjb250ZW50PVwid2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTFcIiAvPlxuICAgICAgICA8bWV0YSBjaGFyU2V0PVwidXRmLThcIiAvPlxuICAgICAgPC9IZWFkPlxuICAgICAgPHN0eWxlIGpzeCBnbG9iYWw+e2BcbiAgICAgICAgKiB7XG4gICAgICAgICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICAgICAgfVxuICAgICAgICBodG1sLCBib2R5IHsgXG4gICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgaGVpZ2h0OiAxMDB2aDtcbiAgICAgICAgICBtYXJnaW46IDBweDtcbiAgICAgICAgICBwYWRkaW5nOiAwcHg7XG4gICAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICAgICAgfVxuICAgICAgICAjX19uZXh0IHtcbiAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgIH1cbiAgICAgIGB9PC9zdHlsZT5cbiAgICA8L2Rpdj5cbiAgKSJdfQ== */\n/*@ sourceURL=/home/malcolm/Dev/javascript/egghead-next-js/components/Head.js */"));
 });
 
 /***/ }),
 
-/***/ "./client/components/MainContent.js":
-/*!******************************************!*\
-  !*** ./client/components/MainContent.js ***!
-  \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/client/components/MainContent.js";
-
-
-var MainContent = function MainContent() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 2
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 3
-    },
-    __self: this
-  }, "Tracks"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 4
-    },
-    __self: this
-  }, "Get Started by Add Music to Your Library."));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (MainContent);
-
-/***/ }),
-
-/***/ "./client/components/Menu.js":
+/***/ "./components/MainContent.js":
 /*!***********************************!*\
-  !*** ./client/components/Menu.js ***!
+  !*** ./components/MainContent.js ***!
   \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -433,7 +306,89 @@ var MainContent = function MainContent() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/client/components/Menu.js";
+/* harmony import */ var _Track__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Track */ "./components/Track.js");
+var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/components/MainContent.js";
+
+
+var styles = {
+  width: '100%',
+  overflow: 'hidden'
+};
+var listStyles = {
+  height: '100%',
+  overflowX: 'hidden',
+  overflowY: 'scroll'
+};
+
+var removeExt = function removeExt(str) {
+  if (str.includes('.mp3')) {
+    return str.replace(/.(mp3)/g, '');
+  }
+
+  if (str.includes('.m4a')) {
+    return str.replace(/.(m4a)/g, '');
+  }
+};
+
+var MainContent = function MainContent(_ref) {
+  var music = _ref.music;
+  var tracks = music.map(function (_ref2) {
+    var name = _ref2.name,
+        path = _ref2.path,
+        link = _ref2.link,
+        id = _ref2.id;
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Track__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      name: removeExt(name),
+      path: path,
+      link: link,
+      key: id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: this
+    });
+  });
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    style: styles,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: this
+  }, "Tracks"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    style: listStyles,
+    className: "tracks",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: this
+  }, tracks));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MainContent);
+
+/***/ }),
+
+/***/ "./components/Menu.js":
+/*!****************************!*\
+  !*** ./components/Menu.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/components/Menu.js";
 
 var styles = {
   width: '30%',
@@ -482,10 +437,10 @@ var Menu = function Menu() {
 
 /***/ }),
 
-/***/ "./client/components/NextBtn.js":
-/*!**************************************!*\
-  !*** ./client/components/NextBtn.js ***!
-  \**************************************/
+/***/ "./components/MusicPlayer.js":
+/*!***********************************!*\
+  !*** ./components/MusicPlayer.js ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -493,7 +448,103 @@ var Menu = function Menu() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/client/components/NextBtn.js";
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store */ "./store/index.js");
+/* harmony import */ var _components_Artwork__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Artwork */ "./components/Artwork.js");
+/* harmony import */ var _components_Controls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Controls */ "./components/Controls.js");
+/* harmony import */ var _components_Head__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Head */ "./components/Head.js");
+/* harmony import */ var _components_MainContent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/MainContent */ "./components/MainContent.js");
+/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Menu */ "./components/Menu.js");
+var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/components/MusicPlayer.js";
+
+
+
+
+
+
+
+
+var styles = {
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'row',
+  paddingBottom: '150px'
+};
+
+var MusicPlayer = function MusicPlayer(_ref) {
+  var tracks = _ref.tracks;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_store__WEBPACK_IMPORTED_MODULE_1__["StoreProvider"], {
+    value: {
+      state: {
+        tracks: tracks
+      }
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Head__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      height: '100%'
+    },
+    className: "App",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: styles,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Menu__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_MainContent__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    music: tracks,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Controls__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    artwork: _components_Artwork__WEBPACK_IMPORTED_MODULE_2__["default"],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: this
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MusicPlayer);
+
+/***/ }),
+
+/***/ "./components/NextBtn.js":
+/*!*******************************!*\
+  !*** ./components/NextBtn.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/components/NextBtn.js";
 
 var controlBtnStyle = {
   backgroundColor: 'transparent',
@@ -547,10 +598,10 @@ var NextButton = function NextButton(_ref) {
 
 /***/ }),
 
-/***/ "./client/components/PlayBtn.js":
-/*!**************************************!*\
-  !*** ./client/components/PlayBtn.js ***!
-  \**************************************/
+/***/ "./components/PlayBtn.js":
+/*!*******************************!*\
+  !*** ./components/PlayBtn.js ***!
+  \*******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -558,7 +609,7 @@ var NextButton = function NextButton(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/client/components/PlayBtn.js";
+var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/components/PlayBtn.js";
 
 var controlBtnStyle = {
   backgroundColor: 'transparent',
@@ -614,10 +665,10 @@ var PlayButton = function PlayButton(_ref) {
 
 /***/ }),
 
-/***/ "./client/components/PreviousBtn.js":
-/*!******************************************!*\
-  !*** ./client/components/PreviousBtn.js ***!
-  \******************************************/
+/***/ "./components/PreviousBtn.js":
+/*!***********************************!*\
+  !*** ./components/PreviousBtn.js ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -625,7 +676,7 @@ var PlayButton = function PlayButton(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/client/components/PreviousBtn.js";
+var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/components/PreviousBtn.js";
 
 var controlBtnStyle = {
   backgroundColor: 'transparent',
@@ -679,10 +730,10 @@ var PreviousButton = function PreviousButton(_ref) {
 
 /***/ }),
 
-/***/ "./client/components/TrackSeeker.js":
-/*!******************************************!*\
-  !*** ./client/components/TrackSeeker.js ***!
-  \******************************************/
+/***/ "./components/Track.js":
+/*!*****************************!*\
+  !*** ./components/Track.js ***!
+  \*****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -690,7 +741,48 @@ var PreviousButton = function PreviousButton(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/client/components/TrackSeeker.js";
+var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/components/Track.js";
+
+var styles = {
+  listStyle: 'none'
+};
+
+var Track = function Track(_ref) {
+  var name = _ref.name,
+      link = _ref.link,
+      path = _ref.path;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    style: styles,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }, name));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Track);
+
+/***/ }),
+
+/***/ "./components/TrackSeeker.js":
+/*!***********************************!*\
+  !*** ./components/TrackSeeker.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/components/TrackSeeker.js";
 
 var style = {
   margin: '25px',
@@ -712,192 +804,6 @@ var PlayButton = function PlayButton(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (PlayButton);
-
-/***/ }),
-
-/***/ "./client/store/StoreProvider.js":
-/*!***************************************!*\
-  !*** ./client/store/StoreProvider.js ***!
-  \***************************************/
-/*! exports provided: initialState, StoreProvider, StoreConsumer, StoreContext */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StoreProvider", function() { return StoreProvider; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StoreConsumer", function() { return Consumer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StoreContext", function() { return StoreContext; });
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./actions */ "./client/store/actions.js");
-/* harmony import */ var _reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./reducer */ "./client/store/reducer.js");
-
-var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/client/store/StoreProvider.js";
-
-
-
-var initialState = {
-  currentTrack: {},
-  currentAlbum: {},
-  tracks: [],
-  albums: [],
-  isPlaying: false
-};
-var StoreContext;
-
-var _StoreContext = StoreContext = react__WEBPACK_IMPORTED_MODULE_1___default.a.createContext(),
-    Provider = _StoreContext.Provider,
-    Consumer = _StoreContext.Consumer;
-
-var StoreProvider = function StoreProvider(_ref) {
-  var children = _ref.children;
-
-  var _useReducer = Object(react__WEBPACK_IMPORTED_MODULE_1__["useReducer"])(_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], initialState),
-      _useReducer2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useReducer, 2),
-      state = _useReducer2[0],
-      dispatch = _useReducer2[1];
-
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Provider, {
-    value: {
-      state: state,
-      actions: _actions__WEBPACK_IMPORTED_MODULE_2__["actions"],
-      dispatch: dispatch
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: this
-  }, children);
-};
-
-
-
-/***/ }),
-
-/***/ "./client/store/actions.js":
-/*!*********************************!*\
-  !*** ./client/store/actions.js ***!
-  \*********************************/
-/*! exports provided: actionTypes, actions */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actionTypes", function() { return actionTypes; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
-var actionTypes = {
-  SET_TRACKS: 'SET_TRACKS',
-  UPDATE_CURRENT_TRACK: 'UPDATE_CURRENT_TRACK',
-  SET_ALBUMS: 'SET_ALBUMS',
-  UPDATE_CURRENT_ALBUM: 'UPDATE_CURRENT_ALBUM',
-  UPDATE_PLAY_STATE: 'UPDATE_PLAY_STATE'
-};
-
-var setTracksAction = function setTracksAction(payload) {
-  return {
-    type: actionTypes.SET_TRACKS,
-    payload: payload
-  };
-};
-
-var updateCurrentTrackAction = function updateCurrentTrackAction(payload) {
-  return {
-    type: actionTypes.UPDATE_CURRENT_TRACK,
-    payload: payload
-  };
-};
-
-var setAlbumsAction = function setAlbumsAction(payload) {
-  return {
-    type: actionTypes.SET_ALBUMS,
-    payload: payload
-  };
-};
-
-var updateCurrentAlbumAction = function updateCurrentAlbumAction(payload) {
-  return {
-    type: actionTypes.UPDATE_CURRENT_ALBUM,
-    payload: payload
-  };
-};
-
-var updatePlayStateAction = function updatePlayStateAction(payload) {
-  return {
-    type: actionTypes.UPDATE_PLAY_STATE,
-    payload: payload
-  };
-};
-
-var actions = {
-  setTracksAction: setTracksAction,
-  updateCurrentTrackAction: updateCurrentTrackAction,
-  setAlbumsAction: setAlbumsAction,
-  updateCurrentAlbumAction: updateCurrentAlbumAction,
-  updatePlayStateAction: updatePlayStateAction
-};
-
-/***/ }),
-
-/***/ "./client/store/index.js":
-/*!*******************************!*\
-  !*** ./client/store/index.js ***!
-  \*******************************/
-/*! exports provided: StoreProvider, StoreConsumer, StoreContext */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _reducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reducer */ "./client/store/reducer.js");
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./actions */ "./client/store/actions.js");
-/* harmony import */ var _StoreProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./StoreProvider */ "./client/store/StoreProvider.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "StoreProvider", function() { return _StoreProvider__WEBPACK_IMPORTED_MODULE_2__["StoreProvider"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "StoreConsumer", function() { return _StoreProvider__WEBPACK_IMPORTED_MODULE_2__["StoreConsumer"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "StoreContext", function() { return _StoreProvider__WEBPACK_IMPORTED_MODULE_2__["StoreContext"]; });
-
-
-
-
-
-
-/***/ }),
-
-/***/ "./client/store/reducer.js":
-/*!*********************************!*\
-  !*** ./client/store/reducer.js ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./actions */ "./client/store/actions.js");
-/* harmony import */ var _StoreProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./StoreProvider */ "./client/store/StoreProvider.js");
-
-
-
-
-var rootReducer = function rootReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _StoreProvider__WEBPACK_IMPORTED_MODULE_2__["initialState"];
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case _actions__WEBPACK_IMPORTED_MODULE_1__["actionTypes"].SET_TRACKS:
-      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
-        tracks: action.payload
-      });
-
-      defailt: return state;
-
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (rootReducer);
 
 /***/ }),
 
@@ -1976,8 +1882,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! isomorphic-fetch */ "isomorphic-fetch");
 /* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(isomorphic_fetch__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _client_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../client/store */ "./client/store/index.js");
-/* harmony import */ var _client_components_App__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../client/components/App */ "./client/components/App.js");
+/* harmony import */ var _components_MusicPlayer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/MusicPlayer */ "./components/MusicPlayer.js");
 
 
 var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/pages/index.js";
@@ -1985,35 +1890,16 @@ var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/pages/index.js"
 
 
 
-
 var Index = function Index(_ref) {
   var music = _ref.music;
-  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_client_store__WEBPACK_IMPORTED_MODULE_4__["StoreProvider"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_client_store__WEBPACK_IMPORTED_MODULE_4__["StoreConsumer"], {
-    value: {
-      state: {
-        tracks: music
-      }
-    },
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_MusicPlayer__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    tracks: music,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7
     },
     __self: this
-  }, function () {
-    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_client_components_App__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 9
-      },
-      __self: this
-    });
-  }));
+  });
 };
 
 Index.getInitialProps =
@@ -2021,7 +1907,7 @@ Index.getInitialProps =
 Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
 /*#__PURE__*/
 _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-  var res, data;
+  var res, response, data;
   return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
@@ -2036,24 +1922,215 @@ _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(f
           return res.json();
 
         case 6:
-          data = _context.sent;
+          response = _context.sent;
+          data = response.data;
           return _context.abrupt("return", {
-            music: data.music
+            music: data
           });
 
-        case 10:
-          _context.prev = 10;
+        case 11:
+          _context.prev = 11;
           _context.t0 = _context["catch"](0);
           console.error('Error getting music.', _context.t0);
+          return _context.abrupt("return", {
+            error: 'ERROR',
+            errorMsg: _context.t0
+          });
 
-        case 13:
+        case 15:
         case "end":
           return _context.stop();
       }
     }
-  }, _callee, null, [[0, 10]]);
+  }, _callee, null, [[0, 11]]);
 }));
 /* harmony default export */ __webpack_exports__["default"] = (Index);
+
+/***/ }),
+
+/***/ "./store/StoreProvider.js":
+/*!********************************!*\
+  !*** ./store/StoreProvider.js ***!
+  \********************************/
+/*! exports provided: initialState, StoreProvider, StoreConsumer, StoreContext */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StoreProvider", function() { return StoreProvider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StoreConsumer", function() { return Consumer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StoreContext", function() { return StoreContext; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./actions */ "./store/actions.js");
+/* harmony import */ var _reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./reducer */ "./store/reducer.js");
+
+var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/store/StoreProvider.js";
+
+
+
+var initialState = {
+  currentTrack: {},
+  currentAlbum: {},
+  tracks: [],
+  albums: [],
+  isPlaying: false
+};
+var StoreContext;
+
+var _StoreContext = StoreContext = react__WEBPACK_IMPORTED_MODULE_1___default.a.createContext(),
+    Provider = _StoreContext.Provider,
+    Consumer = _StoreContext.Consumer;
+
+var StoreProvider = function StoreProvider(_ref) {
+  var children = _ref.children;
+
+  var _useReducer = Object(react__WEBPACK_IMPORTED_MODULE_1__["useReducer"])(_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], initialState),
+      _useReducer2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useReducer, 2),
+      state = _useReducer2[0],
+      dispatch = _useReducer2[1];
+
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Provider, {
+    value: {
+      state: state,
+      actions: _actions__WEBPACK_IMPORTED_MODULE_2__["actions"],
+      dispatch: dispatch
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  }, children);
+};
+
+
+
+/***/ }),
+
+/***/ "./store/actions.js":
+/*!**************************!*\
+  !*** ./store/actions.js ***!
+  \**************************/
+/*! exports provided: actionTypes, actions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actionTypes", function() { return actionTypes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
+var actionTypes = {
+  SET_TRACKS: 'SET_TRACKS',
+  UPDATE_CURRENT_TRACK: 'UPDATE_CURRENT_TRACK',
+  SET_ALBUMS: 'SET_ALBUMS',
+  UPDATE_CURRENT_ALBUM: 'UPDATE_CURRENT_ALBUM',
+  UPDATE_PLAY_STATE: 'UPDATE_PLAY_STATE'
+};
+
+var setTracksAction = function setTracksAction(payload) {
+  return {
+    type: actionTypes.SET_TRACKS,
+    payload: payload
+  };
+};
+
+var updateCurrentTrackAction = function updateCurrentTrackAction(payload) {
+  return {
+    type: actionTypes.UPDATE_CURRENT_TRACK,
+    payload: payload
+  };
+};
+
+var setAlbumsAction = function setAlbumsAction(payload) {
+  return {
+    type: actionTypes.SET_ALBUMS,
+    payload: payload
+  };
+};
+
+var updateCurrentAlbumAction = function updateCurrentAlbumAction(payload) {
+  return {
+    type: actionTypes.UPDATE_CURRENT_ALBUM,
+    payload: payload
+  };
+};
+
+var updatePlayStateAction = function updatePlayStateAction(payload) {
+  return {
+    type: actionTypes.UPDATE_PLAY_STATE,
+    payload: payload
+  };
+};
+
+var actions = {
+  setTracksAction: setTracksAction,
+  updateCurrentTrackAction: updateCurrentTrackAction,
+  setAlbumsAction: setAlbumsAction,
+  updateCurrentAlbumAction: updateCurrentAlbumAction,
+  updatePlayStateAction: updatePlayStateAction
+};
+
+/***/ }),
+
+/***/ "./store/index.js":
+/*!************************!*\
+  !*** ./store/index.js ***!
+  \************************/
+/*! exports provided: StoreProvider, StoreConsumer, StoreContext */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _reducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reducer */ "./store/reducer.js");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./actions */ "./store/actions.js");
+/* harmony import */ var _StoreProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./StoreProvider */ "./store/StoreProvider.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "StoreProvider", function() { return _StoreProvider__WEBPACK_IMPORTED_MODULE_2__["StoreProvider"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "StoreConsumer", function() { return _StoreProvider__WEBPACK_IMPORTED_MODULE_2__["StoreConsumer"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "StoreContext", function() { return _StoreProvider__WEBPACK_IMPORTED_MODULE_2__["StoreContext"]; });
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./store/reducer.js":
+/*!**************************!*\
+  !*** ./store/reducer.js ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./actions */ "./store/actions.js");
+/* harmony import */ var _StoreProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./StoreProvider */ "./store/StoreProvider.js");
+
+
+
+
+var rootReducer = function rootReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _StoreProvider__WEBPACK_IMPORTED_MODULE_2__["initialState"];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _actions__WEBPACK_IMPORTED_MODULE_1__["actionTypes"].SET_TRACKS:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        tracks: action.payload
+      });
+
+      defailt: return state;
+
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (rootReducer);
 
 /***/ }),
 

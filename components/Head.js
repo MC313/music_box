@@ -17,6 +17,9 @@ export default () => (
           padding: 0px;
           overflow: hidden;
         }
+        #__next {
+          height: 100%;
+        }
       `}</style>
     </div>
   )

@@ -45,7 +45,6 @@ exports.music = async (req, res, next) => {
         const streamLinksPromises = musicData.map(({path_lower}) => dbx.filesGetTemporaryLink({path: path_lower}));
         const filesWithLinks = await Promise.all(streamLinksPromises);
         const music = filesWithLinks.map(formatPayload);
-
         res.json({ data: music });
     } catch (error) {
         console.log('Error.', error);
