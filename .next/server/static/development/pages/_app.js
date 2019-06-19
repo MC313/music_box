@@ -1123,18 +1123,18 @@ var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/pages/_app.js";
 
 
 
-var musicApp =
+var BeatDrop =
 /*#__PURE__*/
 function (_App) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(musicApp, _App);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(BeatDrop, _App);
 
-  function musicApp() {
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, musicApp);
+  function BeatDrop() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, BeatDrop);
 
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(musicApp).apply(this, arguments));
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(BeatDrop).apply(this, arguments));
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(musicApp, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(BeatDrop, [{
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -1162,10 +1162,10 @@ function (_App) {
     }
   }]);
 
-  return musicApp;
+  return BeatDrop;
 }(next_app__WEBPACK_IMPORTED_MODULE_7___default.a);
 
-/* harmony default export */ __webpack_exports__["default"] = (musicApp);
+/* harmony default export */ __webpack_exports__["default"] = (BeatDrop);
 
 /***/ }),
 
@@ -1244,9 +1244,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
 var actionTypes = {
   SET_TRACKS: 'SET_TRACKS',
-  UPDATE_CURRENT_TRACK: 'UPDATE_CURRENT_TRACK',
+  SET_CURRENT_TRACK: 'SET_CURRENT_TRACK',
   SET_ALBUMS: 'SET_ALBUMS',
-  UPDATE_CURRENT_ALBUM: 'UPDATE_CURRENT_ALBUM',
+  SET_CURRENT_ALBUM: 'SET_CURRENT_ALBUM',
   UPDATE_PLAY_STATE: 'UPDATE_PLAY_STATE'
 };
 
@@ -1257,9 +1257,9 @@ var setTracksAction = function setTracksAction(payload) {
   };
 };
 
-var updateCurrentTrackAction = function updateCurrentTrackAction(payload) {
+var setCurrentTrackAction = function setCurrentTrackAction(payload) {
   return {
-    type: actionTypes.UPDATE_CURRENT_TRACK,
+    type: actionTypes.SET_CURRENT_TRACK,
     payload: payload
   };
 };
@@ -1271,9 +1271,9 @@ var setAlbumsAction = function setAlbumsAction(payload) {
   };
 };
 
-var updateCurrentAlbumAction = function updateCurrentAlbumAction(payload) {
+var setCurrentAlbumAction = function setCurrentAlbumAction(payload) {
   return {
-    type: actionTypes.UPDATE_CURRENT_ALBUM,
+    type: actionTypes.SET_CURRENT_ALBUM,
     payload: payload
   };
 };
@@ -1287,9 +1287,9 @@ var updatePlayStateAction = function updatePlayStateAction(payload) {
 
 var actions = {
   setTracksAction: setTracksAction,
-  updateCurrentTrackAction: updateCurrentTrackAction,
+  setCurrentTrackAction: setCurrentTrackAction,
   setAlbumsAction: setAlbumsAction,
-  updateCurrentAlbumAction: updateCurrentAlbumAction,
+  setCurrentAlbumAction: setCurrentAlbumAction,
   updatePlayStateAction: updatePlayStateAction
 };
 

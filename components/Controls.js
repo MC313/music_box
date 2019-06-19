@@ -1,4 +1,7 @@
-import TrackSeeker from './TrackSeeker';
+import { useState, useRef } from 'react';
+
+import ArtWork from './Artwork';
+import TrackTimeStatus from './TrackTimeStatus';
 import PreviousBtn from './PreviousBtn';
 import PlayBtn from './PlayBtn';
 import NextBtn from './NextBtn';
@@ -23,15 +26,41 @@ const controlBtm = {
     'width': '60%',
 }
 
-const Controls = ({artwork}) => (
-    <div style={style} className="controls">
-        <TrackSeeker />
-        <div style={controlBtm} className="controls__bottom">
-            <PreviousBtn />
-            <PlayBtn />
-            <NextBtn />
+const Controls = ({artwork, trackLink}) => {
+    const [isPlaying, setPlayState] = useState(false);
+
+    const audioRef = useRef(null);
+
+    // const AudioContext = window.AudioContext || window.webkitAudioContext;
+    // const audioCtx = new AudioContext();
+    // const track = audioCtx.createMediaElementSource(audioRef);
+
+    const onPlay = (audioElement) => {
+        if(!audioElement) { return; }
+        
+        if(!audioElement.paused && audioElement.currentTime) {
+            audioElement.pause();
+            setPlayState(!isPlaying);
+        } else {
+            audioElement.play();
+            setPlayState(!isPlaying);
+        }
+    }
+
+    return (
+        <div style={style} className="controls">
+            <audio src="/static/LoveInTheSky(Explicit Version).mp3" ref={audioRef} crossOrigin="anonynmous" type="audio/mp3"></audio>
+
+            <TrackTimeStatus />
+            <div style={controlBtm} className="controls__bottom">
+                <PreviousBtn />
+
+                <PlayBtn 
+                    handleClick={() => onPlay(audioRef.current)} isPlaying={isPlaying}/>
+                <NextBtn />
+            </div>
         </div>
-    </div>
-);
+    );
+}
 
 export default Controls;

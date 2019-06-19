@@ -2,7 +2,7 @@ import App, { Container } from 'next/app';
 
 import { StoreProvider } from '../store';
 
-class musicApp extends App {
+class BeatDrop extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
@@ -15,4 +15,4 @@ class musicApp extends App {
   }
 }
 
-export default musicApp;
+export default BeatDrop;

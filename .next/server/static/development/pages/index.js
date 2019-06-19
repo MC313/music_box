@@ -127,14 +127,14 @@ var Artwork = function Artwork(_ref) {
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
-    srcSet: img || '../assets/music-note.png',
+    srcSet: img || '/static/music-note.png',
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: img || '../assets/music-note.png',
+    src: img || '/static/music-note.png',
     alt: img ? 'Album Artwork' : 'Music Note',
     __source: {
       fileName: _jsxFileName,
@@ -157,13 +157,18 @@ var Artwork = function Artwork(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _TrackSeeker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TrackSeeker */ "./components/TrackSeeker.js");
-/* harmony import */ var _PreviousBtn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PreviousBtn */ "./components/PreviousBtn.js");
-/* harmony import */ var _PlayBtn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PlayBtn */ "./components/PlayBtn.js");
-/* harmony import */ var _NextBtn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NextBtn */ "./components/NextBtn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Artwork__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Artwork */ "./components/Artwork.js");
+/* harmony import */ var _TrackTimeStatus__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TrackTimeStatus */ "./components/TrackTimeStatus.js");
+/* harmony import */ var _PreviousBtn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PreviousBtn */ "./components/PreviousBtn.js");
+/* harmony import */ var _PlayBtn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./PlayBtn */ "./components/PlayBtn.js");
+/* harmony import */ var _NextBtn__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./NextBtn */ "./components/NextBtn.js");
+
 var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/components/Controls.js";
+
+
 
 
 
@@ -189,45 +194,84 @@ var controlBtm = {
 };
 
 var Controls = function Controls(_ref) {
-  var artwork = _ref.artwork;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  var artwork = _ref.artwork,
+      trackLink = _ref.trackLink;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
+      isPlaying = _useState2[0],
+      setPlayState = _useState2[1];
+
+  var audioRef = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])(null); // const AudioContext = window.AudioContext || window.webkitAudioContext;
+  // const audioCtx = new AudioContext();
+  // const track = audioCtx.createMediaElementSource(audioRef);
+
+  var onPlay = function onPlay(audioElement) {
+    if (!audioElement) {
+      return;
+    }
+
+    if (!audioElement.paused && audioElement.currentTime) {
+      audioElement.pause();
+      setPlayState(!isPlaying);
+    } else {
+      audioElement.play();
+      setPlayState(!isPlaying);
+    }
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     style: style,
     className: "controls",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 51
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TrackSeeker__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("audio", {
+    src: "/static/LoveInTheSky(Explicit Version).mp3",
+    ref: audioRef,
+    crossOrigin: "anonynmous",
+    type: "audio/mp3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 52
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_TrackTimeStatus__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     style: controlBtm,
     className: "controls__bottom",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 55
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PreviousBtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_PreviousBtn__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 56
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PlayBtn__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_PlayBtn__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    handleClick: function handleClick() {
+      return onPlay(audioRef.current);
+    },
+    isPlaying: isPlaying,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 58
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NextBtn__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_NextBtn__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 60
     },
     __self: this
   })));
@@ -315,18 +359,14 @@ var styles = {
   overflow: 'hidden'
 };
 var listStyles = {
-  height: '100%',
+  height: 'calc(100% - 60px)',
   overflowX: 'hidden',
   overflowY: 'scroll'
 };
 
 var removeExt = function removeExt(str) {
-  if (str.includes('.mp3')) {
-    return str.replace(/.(mp3)/g, '');
-  }
-
-  if (str.includes('.m4a')) {
-    return str.replace(/.(m4a)/g, '');
+  if (str.includes('.mp3') || str.includes('.m4a')) {
+    return str.replace(/.(mp3)/g, '') || str.replace(/.(m4a)/g, '');
   }
 };
 
@@ -341,10 +381,11 @@ var MainContent = function MainContent(_ref) {
       name: removeExt(name),
       path: path,
       link: link,
+      id: id,
       key: id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 24
       },
       __self: this
     });
@@ -353,24 +394,30 @@ var MainContent = function MainContent(_ref) {
     style: styles,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 33
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 34
     },
     __self: this
-  }, "Tracks"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+  }, "Tracks"), music ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     style: listStyles,
     className: "tracks",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 37
     },
     __self: this
-  }, tracks));
+  }, tracks) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: this
+  }, "Loading......."));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MainContent);
@@ -480,13 +527,13 @@ var MusicPlayer = function MusicPlayer(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 19
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Head__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 20
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -496,34 +543,34 @@ var MusicPlayer = function MusicPlayer(_ref) {
     className: "App",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 21
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     style: styles,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 22
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Menu__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 23
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_MainContent__WEBPACK_IMPORTED_MODULE_5__["default"], {
     music: tracks,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 24
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Controls__WEBPACK_IMPORTED_MODULE_3__["default"], {
     artwork: _components_Artwork__WEBPACK_IMPORTED_MODULE_2__["default"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 26
     },
     __self: this
   })));
@@ -620,45 +667,73 @@ var controlBtnStyle = {
   lineHeight: '0px',
   padding: '0px'
 };
+var pauseIcon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "24",
+  height: "24",
+  viewBox: "0 0 24 24",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 11
+  },
+  __self: undefined
+}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+  d: "M0 0h24v24H0z",
+  fill: "none",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 12
+  },
+  __self: undefined
+}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 13
+  },
+  __self: undefined
+}));
+var playIcon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "48",
+  height: "48",
+  viewBox: "0 0 48 48",
+  fill: "none",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 16
+  },
+  __self: undefined
+}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+  d: "M0 0h48v48H0z",
+  fill: "none",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 17
+  },
+  __self: undefined
+}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+  d: "M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm-4 29V15l12 9-12 9z",
+  fill: "#fff",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 18
+  },
+  __self: undefined
+}));
 
 var PlayButton = function PlayButton(_ref) {
-  var handleClick = _ref.handleClick;
+  var handleClick = _ref.handleClick,
+      isPlaying = _ref.isPlaying;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     style: controlBtnStyle,
     onClick: handleClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 22
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    width: "48",
-    height: "48",
-    viewBox: "0 0 48 48",
-    fill: "none",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-    d: "M0 0h48v48H0z",
-    fill: "none",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-    d: "M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm-4 29V15l12 9-12 9z",
-    fill: "#fff",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: this
-  })));
+  }, isPlaying ? pauseIcon : playIcon);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (PlayButton);
@@ -741,27 +816,52 @@ var PreviousButton = function PreviousButton(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store */ "./store/index.js");
 var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/components/Track.js";
 
+
+
 var styles = {
-  listStyle: 'none'
+  listStyle: 'none',
+  ':hover': {
+    cursor: 'pointer'
+  }
 };
 
 var Track = function Track(_ref) {
   var name = _ref.name,
       link = _ref.link,
-      path = _ref.path;
+      path = _ref.path,
+      id = _ref.id;
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_store__WEBPACK_IMPORTED_MODULE_1__["StoreContext"]),
+      actions = _useContext.actions,
+      dispatch = _useContext.dispatch,
+      state = _useContext.state;
+
+  var setCurrentTrack = function setCurrentTrack() {
+    return dispatch(actions.setCurrentTrackAction({
+      name: name,
+      link: link,
+      path: path,
+      id: id
+    }));
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     style: styles,
+    onClick: function onClick() {
+      return setCurrentTrack();
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 19
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 20
     },
     __self: this
   }, name));
@@ -771,10 +871,10 @@ var Track = function Track(_ref) {
 
 /***/ }),
 
-/***/ "./components/TrackSeeker.js":
-/*!***********************************!*\
-  !*** ./components/TrackSeeker.js ***!
-  \***********************************/
+/***/ "./components/TrackTimeStatus.js":
+/*!***************************************!*\
+  !*** ./components/TrackTimeStatus.js ***!
+  \***************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -782,28 +882,54 @@ var Track = function Track(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/components/TrackSeeker.js";
+var _jsxFileName = "/home/malcolm/Dev/javascript/egghead-next-js/components/TrackTimeStatus.js";
 
-var style = {
+var styles = {
+  width: '65%',
+  height: '5px',
+  position: 'relative',
   margin: '25px',
-  width: '65%'
+  borderRadius: '20px',
+  backgroundColor: '#000'
+};
+var btnStyles = {
+  width: '15px',
+  height: '15px',
+  position: 'absolute',
+  top: '-5px',
+  left: '0px',
+  borderRadius: '50%',
+  borderStyle: 'none',
+  backgroundColor: '#fff'
 };
 
-var PlayButton = function PlayButton(_ref) {
-  var handleClick = _ref.handleClick;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("progress", {
-    style: style,
-    max: "100",
-    value: "12",
+var TrackTimeStatus = function TrackTimeStatus(_ref) {
+  var time = _ref.time;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: styles,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 22
     },
     __self: this
-  });
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    style: btnStyles,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }, time));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (PlayButton);
+/* harmony default export */ __webpack_exports__["default"] = (TrackTimeStatus);
 
 /***/ }),
 
@@ -2023,9 +2149,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
 var actionTypes = {
   SET_TRACKS: 'SET_TRACKS',
-  UPDATE_CURRENT_TRACK: 'UPDATE_CURRENT_TRACK',
+  SET_CURRENT_TRACK: 'SET_CURRENT_TRACK',
   SET_ALBUMS: 'SET_ALBUMS',
-  UPDATE_CURRENT_ALBUM: 'UPDATE_CURRENT_ALBUM',
+  SET_CURRENT_ALBUM: 'SET_CURRENT_ALBUM',
   UPDATE_PLAY_STATE: 'UPDATE_PLAY_STATE'
 };
 
@@ -2036,9 +2162,9 @@ var setTracksAction = function setTracksAction(payload) {
   };
 };
 
-var updateCurrentTrackAction = function updateCurrentTrackAction(payload) {
+var setCurrentTrackAction = function setCurrentTrackAction(payload) {
   return {
-    type: actionTypes.UPDATE_CURRENT_TRACK,
+    type: actionTypes.SET_CURRENT_TRACK,
     payload: payload
   };
 };
@@ -2050,9 +2176,9 @@ var setAlbumsAction = function setAlbumsAction(payload) {
   };
 };
 
-var updateCurrentAlbumAction = function updateCurrentAlbumAction(payload) {
+var setCurrentAlbumAction = function setCurrentAlbumAction(payload) {
   return {
-    type: actionTypes.UPDATE_CURRENT_ALBUM,
+    type: actionTypes.SET_CURRENT_ALBUM,
     payload: payload
   };
 };
@@ -2066,9 +2192,9 @@ var updatePlayStateAction = function updatePlayStateAction(payload) {
 
 var actions = {
   setTracksAction: setTracksAction,
-  updateCurrentTrackAction: updateCurrentTrackAction,
+  setCurrentTrackAction: setCurrentTrackAction,
   setAlbumsAction: setAlbumsAction,
-  updateCurrentAlbumAction: updateCurrentAlbumAction,
+  setCurrentAlbumAction: setCurrentAlbumAction,
   updatePlayStateAction: updatePlayStateAction
 };
 

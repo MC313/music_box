@@ -15,8 +15,7 @@ const styles = {
   paddingBottom: '150px'
 }
 
-const MusicPlayer = ({tracks}) => {
-    return (
+const MusicPlayer = ({tracks}) => 
         <StoreProvider value={{state: { tracks: tracks}}}>
             <Head/>
             <div style={{height: '100%'}} className="App">
@@ -27,7 +26,6 @@ const MusicPlayer = ({tracks}) => {
                 <Controls artwork={Artwork}/>
             </div>
         </StoreProvider>
-    );
-}
+
 
 export default MusicPlayer;

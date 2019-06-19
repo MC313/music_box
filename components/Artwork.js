@@ -11,8 +11,8 @@ const styles = {
 
 const Artwork = ({img}) => 
     <picture style={styles}>
-        <source srcSet={img || '../assets/music-note.png'} />
-        <img src={img || '../assets/music-note.png'} alt={img ? 'Album Artwork' : 'Music Note'}/>
+        <source srcSet={img || '/static/music-note.png'} />
+        <img src={img || '/static/music-note.png'} alt={img ? 'Album Artwork' : 'Music Note'}/>
     </picture>;
 
 export default Artwork;
