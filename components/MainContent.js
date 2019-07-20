@@ -1,3 +1,6 @@
+import { useContext } from 'react';
+
+import { StoreContext } from '../store';
 import Track from './Track';
 
 const styles = {
@@ -11,31 +14,33 @@ const listStyles = {
     overflowY: 'scroll'
 }
 
-const removeExt = (str) => {
+const _removeExt = (str) => {
     if(str.includes('.mp3') || str.includes('.m4a')) {
-        return str.replace(/.(mp3)/g, '') || str.replace(/.(m4a)/g, '');
+        return str.replace(/.(mp3)|.(m4a)/g, '');
     }
 }
 
-const MainContent = ({music}) => {
+const MainContent = () => {
 
-    const tracks = music.map(
-        ({name, path, link, id}) => 
-            <Track
-                name={removeExt(name)} 
-                path={path} 
-                link={link} 
-                id={id} 
-                key={id}
-            />
+    const { state } = useContext(StoreContext);
+
+    const songs = state.songs.map(({name, path, link, id}) => 
+        <Track
+            name={_removeExt(name)} 
+            path={path} 
+            link={link} 
+            id={id} 
+            key={id}
+        />
     );
+
     return (
         <section style={styles}>
-            <h1>Tracks</h1>
+            <h1 style={{paddingLeft: '10px'}}>Tracks</h1>
             {
-                music ? 
+                state ? 
                 <ul style={listStyles} className="tracks">
-                    {tracks}
+                    {songs}
                 </ul> 
                 :
                 <p>Loading.......</p>

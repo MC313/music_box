@@ -1,3 +1,5 @@
+const { chunk, getOr } = require('lodash/fp');
+
 const dbxConfig = require('./dropbox.config');
 const { dbx } = dbxConfig;
 
@@ -12,7 +14,7 @@ const searchOptions = {
 const listFolderOptions = {
     recursive: true,
     include_deleted: false,
-    include_media_info: false,
+    include_media_info: true,
     include_mounted_folders: false,
 };
 
@@ -31,10 +33,16 @@ const formatPayload = ({link, metadata}) => {
     };
 };
 
+const getMusicFolder = (results) => getOr(null, ['matches', 0], results);
+
+const paginateResponse = (res, resultsPerPage) => 
+    chunk(resultsPerPage, res)
+        .reduce((acc, val, idx) => ({...acc, [idx]: val}), {});
+
 exports.music = async (req, res, next) => {
     try {
         const results = await dbx.filesSearch(searchOptions);
-        const folder = results && results['matches'] && results['matches'][0];
+        const folder = getOr(null, ['matches', 0], results);
         const files = await dbx.filesListFolder({
             path: folder.metadata.path_lower, ...listFolderOptions 
         });
@@ -45,6 +53,11 @@ exports.music = async (req, res, next) => {
         const streamLinksPromises = musicData.map(({path_lower}) => dbx.filesGetTemporaryLink({path: path_lower}));
         const filesWithLinks = await Promise.all(streamLinksPromises);
         const music = filesWithLinks.map(formatPayload);
+
+        const paginatedRes = paginateResponse(music, 25);
+
+        console.log('req', req)
+
         res.json({ data: music });
     } catch (error) {
         console.log('Error.', error);

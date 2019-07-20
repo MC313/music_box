@@ -3,13 +3,13 @@ import { initialState } from './StoreProvider';
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.SET_TRACKS:
+        case actionTypes.SET_SONGS:
             return {
                 ...state,
-                tracks: action.payload
+                songs: action.payload
             };
         
-        defailt:
+        default:
             return state;
     }
 }

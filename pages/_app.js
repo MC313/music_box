@@ -8,7 +8,7 @@ class BeatDrop extends App {
     return (
       <Container>
         <StoreProvider>
-            <Component {...pageProps} />
+          <Component {...pageProps} />
         </StoreProvider>
       </Container>
     );

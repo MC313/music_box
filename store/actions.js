@@ -1,18 +1,18 @@
 export const actionTypes = {
-    SET_TRACKS: 'SET_TRACKS',
-    SET_CURRENT_TRACK: 'SET_CURRENT_TRACK',
+    SET_SONGS: 'SET_SONGS',
+    SET_CURRENT_SONG: 'SET_CURRENT_SONG',
     SET_ALBUMS: 'SET_ALBUMS',
     SET_CURRENT_ALBUM: 'SET_CURRENT_ALBUM',
     UPDATE_PLAY_STATE: 'UPDATE_PLAY_STATE',
 };
 
-const setTracksAction = (payload) => ({
-    type: actionTypes.SET_TRACKS,
+const setSongsAction = (payload) => ({
+    type: actionTypes.SET_SONGS,
     payload
 });
 
-const setCurrentTrackAction = (payload) => ({
-    type: actionTypes.SET_CURRENT_TRACK,
+const setCurrentSongAction = (payload) => ({
+    type: actionTypes.SET_CURRENT_SONG,
     payload
 });
 
@@ -32,8 +32,8 @@ const updatePlayStateAction = (payload) => ({
 });
 
 export const actions = {
-    setTracksAction,
-    setCurrentTrackAction,
+    setSongsAction,
+    setCurrentSongAction,
     setAlbumsAction,
     setCurrentAlbumAction,
     updatePlayStateAction

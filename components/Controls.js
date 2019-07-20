@@ -38,6 +38,7 @@ const Controls = ({artwork, trackLink}) => {
     const onPlay = (audioElement) => {
         if(!audioElement) { return; }
         
+        console.log('audio', audioElement.current)
         if(!audioElement.paused && audioElement.currentTime) {
             audioElement.pause();
             setPlayState(!isPlaying);

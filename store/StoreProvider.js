@@ -4,11 +4,11 @@ import { actions } from './actions';
 import rootReducer from './reducer';
 
 export const initialState = {
-    currentTrack: {  },
-    currentAlbum: {  },
-    tracks: [],
     albums: [],
+    currentAlbum: {  },
+    currentSong: {  },
     isPlaying: false,
+    songs: []
 };
 
 let StoreContext;

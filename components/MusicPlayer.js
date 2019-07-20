@@ -1,7 +1,6 @@
-import { Component, useContext } from 'react';
+import { Fragment, useContext, useEffect } from 'react';
 
-import { StoreProvider, StoreContext } from '../store';
-
+import { StoreContext } from '../store';
 import Artwork from '../components/Artwork';
 import Controls from '../components/Controls';
 import Head from '../components/Head';
@@ -15,17 +14,26 @@ const styles = {
   paddingBottom: '150px'
 }
 
-const MusicPlayer = ({tracks}) => 
-        <StoreProvider value={{state: { tracks: tracks}}}>
+const MusicPlayer = ({songs}) => {
+
+    const { actions, dispatch } = useContext(StoreContext);
+
+    useEffect(() => {
+        dispatch(actions.setSongsAction(songs))
+    });
+    
+    return(    
+        <Fragment>
             <Head/>
             <div style={{height: '100%'}} className="App">
                 <div style={styles}>
                     <Menu/>
-                    <MainContent music={tracks}/>
+                    <MainContent songs={songs}/>
                 </div>
                 <Controls artwork={Artwork}/>
             </div>
-        </StoreProvider>
-
+        </Fragment>
+    );
+}
 
 export default MusicPlayer;

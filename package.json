@@ -12,11 +12,12 @@
     "author": "Malcolm Childs",
     "license": "ISC",
     "dependencies": {
-        "dropbox": "4.0.17",
         "dotenv": "8.0.0",
+        "dropbox": "4.0.17",
         "express": "4.17.1",
         "express-session": "1.16.1",
         "isomorphic-fetch": "2.2.1",
+        "lodash": "^4.17.15",
         "material-ui": "0.20.2",
         "next": "8.1.0",
         "node-cache": "4.2.0",

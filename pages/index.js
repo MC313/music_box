@@ -1,12 +1,7 @@
 import fetch from 'isomorphic-fetch';
-
 import MusicPlayer from '../components/MusicPlayer';
 
-const Index = ({music}) => {
-    return (
-        <MusicPlayer tracks={music} />
-    );
-}
+const Index = ({music}) => <MusicPlayer songs={music} />
 
 Index.getInitialProps = async () => {
     try {
