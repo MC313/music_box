@@ -6,6 +6,7 @@
     ],
     "watch": [
         "pages/index.js",
+        "controllers/*",
         "server.js"
     ],
     "ext": "js json"

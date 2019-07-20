@@ -5,7 +5,6 @@ const { dbx } = dbxConfig;
 
 const searchOptions = {
     path: '',
-    query: 'music',
     start: 0,
     max_results: 20,
     mode: {".tag": "filename"}
@@ -21,7 +20,7 @@ const listFolderOptions = {
 
 const isFile = (file) => file['.tag'] === 'file';
 
-const isNotMusic = ({name}) => name !== 'Music';
+const isNotMusicData = ({name}) => name !== 'Music';
 
 const formatPayload = ({link, metadata}) => {
     const { name, path_lower, id} = metadata;
@@ -33,7 +32,15 @@ const formatPayload = ({link, metadata}) => {
     };
 };
 
+const searchForFolder = (folderName) => dbx.filesSearch({...searchOptions, query: folderName});
+
 const getMusicFolder = (results) => getOr(null, ['matches', 0], results);
+
+const getFilesInFolder = (folder) => dbx.filesListFolder({
+        path: `/${folder}`, ...listFolderOptions 
+});
+
+const getFilesInMusicFolder = () => getFilesInFolder('music');
 
 const paginateResponse = (res, resultsPerPage) => 
     chunk(resultsPerPage, res)
@@ -41,24 +48,18 @@ const paginateResponse = (res, resultsPerPage) =>
 
 exports.music = async (req, res, next) => {
     try {
-        const results = await dbx.filesSearch(searchOptions);
-        const folder = getOr(null, ['matches', 0], results);
-        const files = await dbx.filesListFolder({
-            path: folder.metadata.path_lower, ...listFolderOptions 
-        });
-        const musicData = files.entries
-            .filter(isNotMusic)
-            .filter(isFile);
-
-        const streamLinksPromises = musicData.map(({path_lower}) => dbx.filesGetTemporaryLink({path: path_lower}));
+        const musicFiles = await getFilesInMusicFolder().entries.filter(isNotMusicData);
+        const streamLinksPromises = musicFiles.map(({path_lower}) => dbx.filesGetTemporaryLink({path: path_lower}));
         const filesWithLinks = await Promise.all(streamLinksPromises);
         const music = filesWithLinks.map(formatPayload);
 
         const paginatedRes = paginateResponse(music, 25);
 
-        console.log('req', req)
+        console.log('req', paginatedRes)
 
-        res.json({ data: music });
+        res.json({ 
+            data: paginatedRes
+        })
     } catch (error) {
         console.log('Error.', error);
         return next(new Error('Error access your dropbox acount. ', error));

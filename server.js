@@ -19,7 +19,7 @@ app.prepare().then(() => {
 
     server.use(session(session_options));
 
-    server.get('/api/music', api.music);
+    server.get('/api/music/:pageNumber?', api.music);
 
     server.get('/login', auth.login);
 
