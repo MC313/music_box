@@ -14,13 +14,14 @@ const styles = {
   paddingBottom: '150px'
 }
 
-const MusicPlayer = ({songs}) => {
+const MusicPlayer = ({albums, songs}) => {
 
     const { actions, dispatch } = useContext(StoreContext);
 
     useEffect(() => {
-        dispatch(actions.setSongsAction(songs))
-    });
+        dispatch(actions.setSongsAction(songs));
+        dispatch(actions.setAlbumsAction(albums));
+    }, [albums, songs]);
     
     return(    
         <Fragment>
@@ -28,7 +29,7 @@ const MusicPlayer = ({songs}) => {
             <div style={{height: '100%'}} className="App">
                 <div style={styles}>
                     <Menu/>
-                    <MainContent songs={songs}/>
+                    <MainContent/>
                 </div>
                 <Controls artwork={Artwork}/>
             </div>

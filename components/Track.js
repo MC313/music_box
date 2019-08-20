@@ -7,11 +7,11 @@ const styles = {
 };
 
 const Track = ({name, link, path, id}) => {
-    const { actions, dispatch, state } = useContext(StoreContext);
+    const { actions, dispatch } = useContext(StoreContext);
 
     const setCurrentSong = () => {
         dispatch(
-            actions.setCurrentTrackAction({name, link, path, id})
+            actions.setCurrentSongAction({name, link, path, id})
         );
     }
 

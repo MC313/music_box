@@ -5,8 +5,7 @@
         ".next"
     ],
     "watch": [
-        "pages/index.js",
-        "controllers/*",
+        "controllers/**/*",
         "server.js"
     ],
     "ext": "js json"

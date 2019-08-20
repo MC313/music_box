@@ -8,6 +8,12 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 songs: action.payload
             };
+
+        case actionTypes.SET_ALBUMS:
+                return {
+                    ...state,
+                    albums: action.payload
+                };
         
         default:
             return state;

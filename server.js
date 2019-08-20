@@ -19,15 +19,18 @@ app.prepare().then(() => {
 
     server.use(session(session_options));
 
-    server.get('/api/music/:pageNumber?', api.music);
+    server.get('/api/albums/:pageNumber?', api.albums);
+    server.get('/api/songs/:pageNumber?', api.songs);
 
     server.get('/login', auth.login);
-
     server.get('/auth', auth.getToken);
 
     server.get('/music_player', 
-        auth.isAuthenticated,
-        (req, res) => app.render(req, res, '/')
+        auth.isAuthorized,
+        (req, res) => {
+            api.getMusic();
+            return app.render(req, res, '/')
+        }
     );
 
     server.get('/', (req, res) => res.redirect(301, '/music_player'));
@@ -38,4 +41,4 @@ app.prepare().then(() => {
         if(err) throw err;
         console.log(`Server listening on port ${port}`);
     })
-});
+}).catch((err) => 'Error on app.prepare');

@@ -20,7 +20,7 @@ exports.login = (req, res) => {
     res.redirect(authUrl);
 }
 
-exports.isAuthenticated = (req, res, next) => {
+exports.isAuthorized = (req, res, next) => {
     const token = cache.get('tempTokenKey');
     return token ? next() : res.redirect('/login');
 }

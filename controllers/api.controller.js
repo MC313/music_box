@@ -1,6 +1,7 @@
 const { chunk, getOr } = require('lodash/fp');
 
 const dbxConfig = require('./dropbox.config');
+
 const { dbx } = dbxConfig;
 
 const searchOptions = {
@@ -11,19 +12,17 @@ const searchOptions = {
 };
 
 const listFolderOptions = {
-    recursive: true,
+    recursive: false,
     include_deleted: false,
     include_media_info: true,
     include_mounted_folders: false,
 };
 
-
 const isFile = (file) => file['.tag'] === 'file';
 
 const isNotMusicData = ({name}) => name !== 'Music';
 
-const formatPayload = ({link, metadata}) => {
-    const { name, path_lower, id} = metadata;
+const formatPayload = ({ name, path_lower, id, link = null}) => {
     return {
         id,
         name,
@@ -32,36 +31,59 @@ const formatPayload = ({link, metadata}) => {
     };
 };
 
-const searchForFolder = (folderName) => dbx.filesSearch({...searchOptions, query: folderName});
+const formatSongPayload = ({link, metadata}) => formatPayload({...metadata, link});
 
-const getMusicFolder = (results) => getOr(null, ['matches', 0], results);
+//const searchForFolder = (folderName) => dbx.filesSearch({...searchOptions, query: folderName});
 
-const getFilesInFolder = (folder) => dbx.filesListFolder({
-        path: `/${folder}`, ...listFolderOptions 
-});
+//const getMusicFolder = (results) => getOr(null, ['matches', 0], results);
 
-const getFilesInMusicFolder = () => getFilesInFolder('music');
+// const getFilesInFolder = (folder) => dbx.filesListFolder({
+//     ...listFolderOptions, path: `/${folder}` 
+// });
+
+const getFilesInMusicFolder = async () => {
+    const files = await dbx.filesListFolder({
+        ...listFolderOptions, path: `/music` 
+    })
+    return files.entries.filter(isNotMusicData);
+};
+
+const getStreamLink = (filePath) => dbx.filesGetTemporaryLink({path: filePath});
 
 const paginateResponse = (res, resultsPerPage) => 
     chunk(resultsPerPage, res)
-        .reduce((acc, val, idx) => ({...acc, [idx]: val}), {});
+        .reduce((acc, val, idx) => ({...acc, [+(idx + 1)]: val}), {});
 
-exports.music = async (req, res, next) => {
+const createMusicApi = (res, musicArr, {params: {pageNumber}}) => {
+    const paginatedRes = paginateResponse(musicArr, 25);
+    res.json({
+        data: paginatedRes[pageNumber + ''] || musicArr,
+        currentPage: pageNumber || null 
+    }); 
+}
+
+let albums = [];
+let songs = [];
+
+// Get all music from dropbox account
+exports.getMusic = async () => {
     try {
-        const musicFiles = await getFilesInMusicFolder().entries.filter(isNotMusicData);
-        const streamLinksPromises = musicFiles.map(({path_lower}) => dbx.filesGetTemporaryLink({path: path_lower}));
-        const filesWithLinks = await Promise.all(streamLinksPromises);
-        const music = filesWithLinks.map(formatPayload);
+        const musicFiles = await getFilesInMusicFolder();
+    
+        albums = [...musicFiles].filter((file) => !isFile(file)).map(formatPayload);
 
-        const paginatedRes = paginateResponse(music, 25);
-
-        console.log('req', paginatedRes)
-
-        res.json({ 
-            data: paginatedRes
-        })
+        streamLinksPromises = [...musicFiles].filter((file) => isFile(file)).map(({path_lower}) => getStreamLink(path_lower));
+        
+        const songsWithLinks = await Promise.all(streamLinksPromises);
+        
+        songs = songsWithLinks.map(formatSongPayload);
+    
     } catch (error) {
         console.log('Error.', error);
-        return next(new Error('Error access your dropbox acount. ', error));
+        throw(new Error('Error accessing your dropbox acount. ', error));
     }
 }
+
+exports.albums = (req, res) => createMusicApi(res, albums, req);
+
+exports.songs = (req, res) => createMusicApi(res, songs, req);
