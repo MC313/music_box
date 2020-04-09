@@ -1,31 +1,31 @@
 {
-  "name": "dbx-music-player",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "nextjs-course",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon server.js server.js",
+        "start": "next start",
+        "build": "next build"
+    },
+    "keywords": [],
+    "author": "Malcolm Childs",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "8.0.0",
+        "dropbox": "4.0.17",
+        "express": "4.17.1",
+        "express-session": "1.16.1",
+        "isomorphic-fetch": "2.2.1",
+        "lodash": "^4.17.15",
+        "material-ui": "0.20.2",
+        "next": "8.1.0",
+        "node-cache": "4.2.0",
+        "react": "16.8.6",
+        "react-dom": "16.8.6",
+        "react-tap-event-plugin": "3.0.3"
+    },
+    "devDependencies": {
+        "nodemon": "1.19.1"
+    }
 }
